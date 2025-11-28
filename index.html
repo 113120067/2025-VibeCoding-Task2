@@ -81,6 +81,66 @@
       color: #1fa2ff;
       margin-bottom: 1rem;
     }
+    .about-content {
+      margin-bottom: 1.5rem;
+    }
+    .about-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0;
+    }
+    .about-highlights li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      position: relative;
+    }
+    .about-highlights li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #1fa2ff;
+      font-weight: bold;
+    }
+    .about-actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: #1fa2ff;
+      color: #0f3460;
+    }
+    .btn-primary:hover {
+      background: #0f3460;
+      color: #1fa2ff;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #1fa2ff;
+      border: 2px solid #1fa2ff;
+    }
+    .btn-secondary:hover {
+      background: #1fa2ff;
+      color: #0f3460;
+      transform: translateY(-2px);
+    }
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(31,162,255,0.15);
+    }
     /* CSS:ABOUT-END */
 
     /* CSS:SKILLS-START */
@@ -117,12 +177,25 @@
       .container {
         padding: 0 2rem;
       }
-      .section-about, .section-projects {
+      .section-about .container {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        align-items: center;
+      }
+      .about-content {
+        flex: 1;
+        margin-bottom: 0;
+      }
+      .about-image {
+        flex: 0 0 40%;
+      }
+      .section-projects {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
       }
-      .section-about > .container, .section-projects > .container {
+      .section-projects > .container {
         display: flex;
         flex-direction: row;
         gap: 2.5rem;
@@ -244,8 +317,23 @@
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 About 區的占位內容，之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這一區。</p>
+          <div class="about-content">
+            <h2 id="about-heading" class="section-title">關於我</h2>
+            <p>我是一名前端工程師，專注於打造現代化的網頁應用程式。主要技能包含 HTML、CSS、JavaScript 以及前端框架，擅長將設計稿轉化為高品質的使用者介面。同時也投入教學與技術分享，幫助更多人進入前端開發領域。</p>
+            <p>我重視溝通與協作，相信好的產品來自於清晰的需求理解與細節執行。喜歡把複雜的技術概念講清楚，讓團隊成員與客戶都能輕鬆理解專案進度與技術決策。</p>
+            <ul class="about-highlights">
+              <li>響應式設計與跨裝置相容性優化</li>
+              <li>前端效能調校與使用者體驗提升</li>
+              <li>技術教學與團隊知識分享</li>
+            </ul>
+            <div class="about-actions">
+              <a href="#projects" class="btn btn-primary">查看作品集</a>
+              <a href="#contact" class="btn btn-secondary">聯絡我</a>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="在筆電前專注編寫程式碼的前端工程師" loading="lazy">
+          </div>
         </div>
       </section>
       <!-- SECTION:ABOUT-END -->
